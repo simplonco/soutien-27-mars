@@ -1,0 +1,8 @@
+.shop {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop * {
+  border: 1px solid black;
+}
