@@ -27,24 +27,27 @@ class Shop extends Component {
 
     this.state = {
       products: products,
-      basket: 0
+      purchase: []
     }
+
   }
 
-  addBasket (price) {
-    /* Cette fonction nous servira à ajouter des produits à notre panier */
+  add (product) {
+    let arr = this.state.purchase;
+    arr.push(product);
+    this.setState({purchase: arr});
   }
 
   render() {
 
     return (
       <div className="shop">
-        <Basket />
-        {
-          this.state.products.map( (product,i) => {
-            return <Product key={i} name={product.name} price={product.price}/>
-          })
-        }
+        <Basket purchase={this.state.purchase} />
+        {this.state.products.map( (product,i) => {
+          return (
+            <Product key={i} product={product} add={this.add.bind(this)}/>
+          );
+        })}
       </div>
     );
   }

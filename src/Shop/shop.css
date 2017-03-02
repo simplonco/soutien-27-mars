@@ -3,6 +3,6 @@
   flex-wrap: wrap;
 }
 
-.shop * {
+.shop .product, .shop .basket {
   border: 1px solid black;
 }
