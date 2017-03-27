@@ -1,8 +1,0 @@
-.shop {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.shop .product, .shop .basket {
-  border: 1px solid black;
-}
